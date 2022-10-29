@@ -1,0 +1,21 @@
+.cover {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  background-color: white;
+}
+
+.coverTitle {
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
+  font-weight: 600;
+}
+
+.coverList {
+  padding: 10px;
+}
+
+.boarder {
+  margin: 0;
+}

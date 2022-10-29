@@ -1,0 +1,105 @@
+.coverButton {
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+.spacer {
+  flex-grow: 1;
+}
+
+.rowCover {
+  display: flex;
+}
+
+.rowSubMessage {
+  font-size: 12px;
+  line-height: 1.2em;
+  color: #666;
+}
+
+input[type='checkbox'] {
+  display: none;
+}
+
+.deleteButton {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0 10px;
+  border-radius: 10px;
+  background-color: transparent;
+  color: rgb(90, 8, 31);
+}
+.deleteButton:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.editButton {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0 10px;
+  border-radius: 10px;
+  color: rgb(31, 41, 55);
+  background-color: transparent;
+}
+.editButton:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.complete {
+  text-decoration: line-through double;
+}
+
+.myCheckbox {
+  box-sizing: border-box;
+  padding: 5px 20px;
+  position: relative;
+  display: inline;
+  width: auto;
+  cursor: pointer;
+}
+
+.myCheckbox::before {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  content: '';
+  display: block;
+  height: 16px;
+  left: 5px;
+  margin-top: -8px;
+  position: absolute;
+  top: 50%;
+  width: 16px;
+}
+
+.myCheckbox::after {
+  border-right: 6px solid #00cccc;
+  border-bottom: 3px solid #00cccc;
+  content: '';
+  display: block;
+  height: 24px;
+  left: 10px;
+  margin-top: -16px;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  transform: rotate(45deg);
+  width: 9px;
+}
+
+input[type='checkbox']:checked + .myCheckbox::before {
+  border-color: #666;
+}
+
+input[type='checkbox']:checked + .myCheckbox::after {
+  opacity: 1;
+}

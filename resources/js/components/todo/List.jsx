@@ -1,18 +1,39 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
 
-function List() {
+import Item from './Item'
+import style from './List.module.css'
+
+function List({ items, onUpdated }) {
+  const contents = items.map((item, index) => (
+    <div key={item.id}>
+      {index !== 0 ? <hr className={style.boarder} /> : <></>}
+      <Item
+        id={item.id}
+        userId={item.user_id}
+        isDone={item.is_done}
+        title={item.title}
+        createdAt={item.created_at}
+        updatedAt={item.updated_at}
+        onUpdated={() => {
+          onUpdated()
+        }}
+        onDeleted={() => {
+          onUpdated()
+        }}
+      />
+    </div>
+  ))
+
   return (
-    <div className="container">
-      <div className="row justify-content-center">
-        <div className="col-md-8">
-          <div className="card">
-            <div className="card-header">Test</div>
-            <div className="card-body">I'm an example components!</div>
-          </div>
+    <>
+      <div className={style.cover}>
+        <div className={style.coverTitle}>一覧</div>
+        <div className={style.coverList}>
+          {contents}
+          {items.length == 0 ? 'アイテムなし' : ''}
         </div>
       </div>
-    </div>
+    </>
   )
 }
 
